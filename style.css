@@ -31,15 +31,7 @@ html {
 	padding: 0 15px 0 15px;
 }
 
-#geolocation {
-	padding: 1em 15px 1em 15px;
-	background-color: white;
-	color: #404040;
-	text-align: center;
-	outline: none;
-	border: none;
-	border-radius: 0px 4px 4px 0px;
-}
+
 
 h1 {
 		font-family: 'Poppins',
@@ -71,6 +63,18 @@ header {
 	/* 	grid-gap: 12px; */
 	/* justify-content: stretch; */
 }
+/* .weaterImg{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+
+} */
+
+.weatherImage{
+	height:5em;
+	width:5em;
+}
+
 
 .containerBtnInfo {
 	display: flex;
@@ -84,7 +88,7 @@ form {
 	justify-content: space-around;
 }
 
-#today {
+/* #today {
 	justify-self: center;
 	font-weight: bold;
 }
@@ -108,7 +112,7 @@ form {
 
 #tomorrowText {
 	background-color: blue;
-}
+} */
 
 
 .umbrellaImg {
@@ -116,7 +120,7 @@ form {
 	height: 80px;
 }
 
-@media screen and (max-device-width: 640px) {
+/* @media screen and (max-device-width: 640px) { */
 	body {
 		background: linear-gradient(180deg, #78B9EB 17.72%, rgba(27, 97, 151, 0) 135.55%);
 		background-repeat: no-repeat;
@@ -152,21 +156,10 @@ form {
 		justify-content: center;
 		align-items: center;
 
-		/* 		display: grid;
-		grid-template-columns: repeat(8, 1fr);
-		grid-template-rows: repeat(15, 1fr);
-		grid-column-gap: 0px;
-		grid-row-gap: 0px; */
+	
 	}
 
-	form {
-
-		/* grid-row: 1;
-		display: flex;
-		justify-content: space-around;
-		grid-column: 1 / span 7; */
-
-	}
+	
 
 	.dateAndPostalMessage {
 		text-align: center;
@@ -310,4 +303,4 @@ form {
 	img {
 		width: 100%;
 	}
-}
+/* } */

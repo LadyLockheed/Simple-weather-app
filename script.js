@@ -16,50 +16,50 @@ window.addEventListener('load', () => {
 // 	geolocationBtn.addEventListener('click', async event => {
 
 // 	})
+console.log("window addeventlisterner funkar")
 
 
 
+	// let geolocation = document.querySelector('#geolocation')
+	// geolocation.addEventListener('click', event => {
+	// 	let G, options;
 
-	let geolocation = document.querySelector('#geolocation')
-	geolocation.addEventListener('click', event => {
-		let G, options;
+	// 	document.addEventListener('DOMContentLoaded', init);
 
-		document.addEventListener('DOMContentLoaded', init);
-
-		function init(){
-			if(navigator.geolocation){ //! Options (giveUp, tooOld) sätts i millisekunder
-				let giveUp = 1000 * 30; //* 30 sekunder
-				let tooOld = 1000 * 60 * 60; //* 1 timma
-				options ={
-					enableHighAccuracy: true,
-					timeout: giveUp,
-					maximumAge: tooOld
-				}
-				navigator.geolocation.getCurrentPosition(gotPosition, positionFail, options);
-			}else{
-				//? Om en gammal webbläsare inte stödjer Geolocation
-				console.log('something went wrong!')
-			}
-		}
-		function gotPosition(position){
-			console.log(position)
-			//*	position.coords.latitude;
-			//* position.coords.longitude;
-			//* position.coords.accuracy;
-			//* position.timestamp;
-		}
-		function positionFail(err){
-			//! Går något fel får vi tillbaka en siffra (err)
-			let errors = {
-				1: 'Du gav mig inte tillåtelse att leta upp dig',
-				2: 'Jag är inte riktigt säker på vart  du håller hus',
-				3: 'Det tog för lång tid, du har en skitdator'
-			}
-			// document.querySelector('h1').textContent = errors[err];
-		}
+	// 	function init(){
+	// 		if(navigator.geolocation){ //! Options (giveUp, tooOld) sätts i millisekunder
+	// 			let giveUp = 1000 * 30; //* 30 sekunder
+	// 			let tooOld = 1000 * 60 * 60; //* 1 timma
+	// 			options ={
+	// 				enableHighAccuracy: true,
+	// 				timeout: giveUp,
+	// 				maximumAge: tooOld
+	// 			}
+	// 			navigator.geolocation.getCurrentPosition(gotPosition, positionFail, options);
+	// 		}else{
+	// 			//? Om en gammal webbläsare inte stödjer Geolocation
+	// 			console.log('something went wrong!')
+	// 		}
+	// 	}
+	// 	function gotPosition(position){
+	// 		console.log(position)
+	// 		//*	position.coords.latitude;
+	// 		//* position.coords.longitude;
+	// 		//* position.coords.accuracy;
+	// 		//* position.timestamp;
+	// 	}
+	// 	function positionFail(err){
+	// 		//! Går något fel får vi tillbaka en siffra (err)
+	// 		let errors = {
+	// 			1: 'Du gav mig inte tillåtelse att leta upp dig',
+	// 			2: 'Jag är inte riktigt säker på vart  du håller hus',
+	// 			3: 'Det tog för lång tid, du har en skitdator'
+	// 		}
+	// 		// document.querySelector('h1').textContent = errors[err];
+	// 	}
 
 
-	})
+	// })
 
 
 
@@ -125,7 +125,13 @@ window.addEventListener('load', () => {
 			alert("Du måste skriva in ett postnummer!");
 		} else if (isNaN(postalCode)){
 			alert('Bara siffror i postnummret är accepterat!')
-		}else{
+		}
+		else if (postalCode.length<5){
+		
+			alert("Numret måste innehålla 5 siffror.");
+		}
+		
+		else{
         console.log(postalCode)
         const editedURL = baseURL + postalCode + apiSettingKey;
         let weatherResponse = await fetch(editedURL);
@@ -151,8 +157,7 @@ window.addEventListener('load', () => {
     function showResults(modifiedArray, postalCode){
 		//! Dagens Start
 		//TODO dubbla bilder
-		// let imgUmbrella = document.getElementById('umbrellaImg')
-		// imgUmbrella.remove();
+	
 		document.getElementById('todayText').innerHTML = '';
 		
 		let dateAndPostal1 = document.createElement('div');		
