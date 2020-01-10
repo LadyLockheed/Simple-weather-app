@@ -79,6 +79,7 @@ window.addEventListener('load', () => {
     let infoContainer = document.querySelector("#infoContainer");
 
     infoBtn.addEventListener("click", event => {
+		console.log("infobutton funkar");
 
     	if (!infoContainer.style.display)
     		infoContainer.style.display = "none";
@@ -441,7 +442,7 @@ window.addEventListener('load', () => {
 		console.log(wx_code)
 		if ((wx_code >= 1 && wx_code <= 3)) {
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/Clouds.png');
+			umbrellaImg.setAttribute('src', 'Resources/Clouds.png');
 			umbrellaImg.setAttribute('alt', 'No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
@@ -453,7 +454,7 @@ window.addEventListener('load', () => {
 		}
 		else if ((wx_code == 49 || wx_code == 45) || (wx_code == 10)) {
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/Fog.png');
+			umbrellaImg.setAttribute('src', 'Resources/Fog.png');
 			umbrellaImg.setAttribute('alt', 'Fogy No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
@@ -465,7 +466,7 @@ window.addEventListener('load', () => {
 		}
 		else if ((wx_code == 0)){
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/Sun.png');
+			umbrellaImg.setAttribute('src', 'Resources/Sun.png');
 			umbrellaImg.setAttribute('alt', 'No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
@@ -477,7 +478,7 @@ window.addEventListener('load', () => {
 		}
 		else if (wx_code == 38){
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/Windy.png');
+			umbrellaImg.setAttribute('src', 'Resources/Windy.png');
 			umbrellaImg.setAttribute('alt', 'Storm No Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
@@ -489,7 +490,7 @@ window.addEventListener('load', () => {
 		 }
 		 else{
 			let umbrellaImg = document.createElement('img');
-			umbrellaImg.setAttribute('src', '/Resources/Rain.png');
+			umbrellaImg.setAttribute('src', 'Resources/Rain.png');
 			umbrellaImg.setAttribute('alt', 'Yes Umbrella');
 			umbrellaImg.className = 'umbrellaImg';
 			document.getElementById('todayText').appendChild(umbrellaImg)
